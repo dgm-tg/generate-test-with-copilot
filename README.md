@@ -1,4 +1,4 @@
-# Demo: Generating tests for Playwright Movies App
+# Generating files with Playwright
 
 ## Cloned from https://github.com/debs-obrien/generate-test-with-copilot
 

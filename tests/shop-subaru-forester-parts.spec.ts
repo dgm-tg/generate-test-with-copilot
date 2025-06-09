@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test('Search and view Subaru Forester parts on wheelership.com', async ({ page }) => {
+test('Search and view Subaru Forester parts on wheelership.com', async ({
+  page,
+}) => {
   // Step 1: Navigate to wheelership.com
   await test.step('Navigate to wheelership.com', async () => {
     await page.goto('https://www.wheelership.com/');
@@ -26,17 +28,25 @@ test('Search and view Subaru Forester parts on wheelership.com', async ({ page }
 
     // Verify search results page loaded with correct vehicle
     await expect(page).toHaveURL(/make-subaru-model-forester-year-2009/);
-    await expect(page.locator('text=Compatible with your "Subaru Forester 2009"')).toBeVisible();
+    await expect(
+      page.locator('text=Compatible with your "Subaru Forester 2009"')
+    ).toBeVisible();
   });
 
   // Step 3: Click on the first product
   await test.step('Click on the first product', async () => {
     // Click on the first product - Pirelli PZero All Season 235/45R18
-    await page.locator('a').filter({ hasText: 'Pirelli PZero All Season 235/45R18' }).first().click();
+    await page
+      .locator('a')
+      .filter({ hasText: 'Pirelli PZero All Season 235/45R18' })
+      .first()
+      .click();
 
     // Verify product page loaded correctly
     await expect(page).toHaveTitle('Pirelli PZero All Season 235/45R18');
-    await expect(page.locator('h1:has-text("Pirelli PZero All Season 235/45R18")')).toBeVisible();
+    await expect(
+      page.locator('h1:has-text("Pirelli PZero All Season 235/45R18")')
+    ).toBeVisible();
     await expect(page.locator('text=In stock')).toBeVisible();
     await expect(page.locator('text=$239.94')).toBeVisible();
   });
