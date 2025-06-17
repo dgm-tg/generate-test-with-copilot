@@ -1,0 +1,39 @@
+[
+  {
+    "type": "CTA Placement",
+    "elements": [
+      {
+        "text": "Subscribe now",
+        "type": "a",
+        "id": "",
+        "classes": ".o-btn.o-btn--white.c-subscribe__btn",
+        "x": 1066.265625,
+        "y": 7725.265625,
+        "width": 173.734375,
+        "height": 49,
+        "isVisible": true,
+        "isCTA": true,
+        "selector": ".o-btn.o-btn--white.c-subscribe__btn"
+      },
+      {
+        "text": "Contact Us",
+        "type": "a",
+        "id": "",
+        "classes": "",
+        "x": 970,
+        "y": 8039.765625,
+        "width": 78.7359619140625,
+        "height": 22,
+        "isVisible": true,
+        "isCTA": true,
+        "selector": "a"
+      }
+    ],
+    "suggestion": "Consider repositioning key CTAs to high-attention zones (top-left and center of viewport)"
+  },
+  {
+    "type": "Clickable Density",
+    "count": 60,
+    "suggestion": "High number of clickable elements may cause choice paralysis. Consider simplifying the interface."
+  }
+]
