@@ -1,18 +1,22 @@
-# Unfriend Facebook
+# Generating files with Playwright
 
-This project uses Playwright to automate the deletion of Facebook activity from your activity log, helping you clean up your digital footprint specifically by removing activities that appear on the /allactivity page.
+This project demonstrates how to use GitHub Copilot to generate Playwright test files for various testing scenarios.
 
 ## Getting Started
 
 ### Prerequisites
 
-1. Make sure you have Node.js installed (version 14 or higher)
+1. Make sure you have the Playwright Test for VS Code extension installed
+
+   - Open VS Code Extensions panel (Ctrl+Shift+X or Cmd+Shift+X on Mac)
+   - Search for "Playwright Test"
+   - Click Install on the extension by Microsoft
 
 2. Clone this repository
 
    ```bash
-   git clone https://github.com/your-username/unfriend_facebook.git
-   cd unfriend_facebook
+   git clone https://github.com/your-username/generate-test-with-copilot.git
+   cd generate-test-with-copilot
    ```
 
 3. Install dependencies
@@ -21,73 +25,73 @@ This project uses Playwright to automate the deletion of Facebook activity from 
    npm install
    ```
 
-4. Install Playwright browsers
+4. Make sure the server is running. You can press start in the server in the .vscode/settings.json file
 
+5. Generate tests using GitHub Copilot (see examples below)
+
+6. Run the tests
    ```bash
-   npx playwright install
+   npx playwright test
    ```
 
-### Starting the Server
+## Types of Generators with Examples
 
-This project uses the Model Context Protocol (MCP) server for Playwright. To start the server:
+### Basic Page Navigation and Verification
 
-1. Open the project in Visual Studio Code
-2. Use the Command Palette (Cmd+Shift+P on macOS) and search for "MCP: Start Server"
-3. Select the "playwright" server defined in the `.vscode/mcp.json` file
+```md
+Generate a Playwright test for the following scenario:
 
-The MCP server will start running and provide browser automation capabilities for the script.
+1. Navigate to https://debs-obrien.github.io/playwright-movies-app
+2. search for 'Garfield'
+3. verify the movie is in the list
+```
 
-### Usage
+### Screenshot Tests
 
-1. Run the activity deletion script:
+```md
+Generate a Playwright test for the following scenario:
 
-   ```bash
-   node delete-facebook-activity.js
-   ```
+1. Navigate to https://playwright.dev
+2. Take a screenshot of the homepage
+3. Verify the screenshot was created
+```
 
-2. You'll be prompted for your Facebook activity URL in the format:
+### E-commerce Site Navigation
 
-   ```
-   https://www.facebook.com/{username}/allactivity/
-   ```
+```md
+Generate a Playwright test for the following scenario:
 
-3. The script will open a browser window where you'll need to log in manually.
+1. Navigate to an auto parts website
+2. Search for parts for a specific car model (e.g., "Subaru Forester")
+3. Verify search results contain relevant parts
+4. Add an item to cart
+5. Verify the item is in the cart
+```
 
-4. After logging in, press any key in the terminal to start the automated deletion process.
+### A/B Testing Validation
 
-5. The script will continue running until no more activities are found or you terminate it with Ctrl+C.
+```md
+Generate a Playwright test for the following scenario:
 
-## Features
+1. Navigate to a website with A/B testing
+2. Verify the presence of specific UI elements (like buttons or CTAs)
+3. Compare these elements against expected variations
+4. Take screenshots for visual comparison
+```
 
-This automation tool specifically helps you delete activities from your Facebook activity log (/allactivity page):
+### Heatmap Analysis
 
-- Automatically navigates to your Facebook activity log
-- Identifies deletable activities in your history
-- Clicks through Facebook's deletion flow for each activity
-- Continues until no more activities are found or you terminate it
+```md
+Generate a Playwright test that:
 
-Note: The tool currently only focuses on the activities shown in your Facebook activity log (https://www.facebook.com/{username}/allactivity/) and does not include other features mentioned previously like post deletion from your profile page, comment cleanup, or like/reaction removal beyond what appears in your activity log.
+1. Navigates to a website
+2. Takes screenshots
+3. Generates a heatmap overlay based on click data
+4. Outputs an HTML report with analysis
+```
 
-## Usage
+## Credit
 
-⚠️ **Important**: This tool automates interactions with Facebook. Use responsibly and be aware of Facebook's terms of service. Consider the following:
+This project is cloned from [Debbie O'Brien's generate-test-with-copilot](https://github.com/debs-obrien/generate-test-with-copilot) repository.
 
-- Run the automation slowly to avoid triggering Facebook's anti-bot measures
-- Be prepared for potential account restrictions
-- Always review what will be deleted before running the automation
-- Keep backups of important content before deletion
-
-## Safety and Legal Considerations
-
-- This tool is for personal use only
-- You are responsible for complying with Facebook's terms of service
-- The automation may break if Facebook updates their interface
-- Use at your own risk - we are not responsible for any account issues
-
-## Contributing
-
-If you find bugs or want to improve the automation scripts, please feel free to submit issues or pull requests.
-
-## Disclaimer
-
-This project is not affiliated with Facebook/Meta. It's an independent tool created to help users manage their own Facebook data. Use responsibly and in accordance with Facebook's terms of service.
+Debbie O'Brien is a Developer Advocate at GitHub and renowned expert in frontend development and testing. Her tutorials and examples on using GitHub Copilot for test generation have been invaluable to the testing community. Check out her [GitHub profile](https://github.com/debs-obrien) and [website](https://debbie.codes/) for more excellent resources.
